@@ -1,1 +1,602 @@
+/*reset.css*/
+/*
+	HTML5 Reset :: style.css
+	----------------------------------------------------------
+	We have learned much from/been inspired by/taken code where offered from:
+
+	Eric Meyer					:: http://meyerweb.com
+	HTML5 Doctor				:: http://html5doctor.com
+	and the HTML5 Boilerplate	:: http://html5boilerplate.com
+
+-------------------------------------------------------------------------------*/
+
+/* Let's default this puppy out
+-------------------------------------------------------------------------------*/
+
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details, summary {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font-weight: normal;
+	vertical-align: baseline;
+	background: transparent;
+}
+
+main, article, aside, figure, footer, header, nav, section, details, summary {display: block;}
+
+/* Handle box-sizing while better addressing child elements:
+   http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+/* consider resetting the default cursor: https://gist.github.com/murtaugh/5247154 */
+
+/* Responsive images and other embedded objects */
+/* if you don't have full control over `img` tags (if you have to overcome attributes), consider adding height: auto */
+img,
+object,
+embed {max-width: 100%;}
+
+/*
+   Note: keeping IMG here will cause problems if you're using foreground images as sprites.
+	In fact, it *will* cause problems with Google Maps' controls at small size.
+	If this is the case for you, try uncommenting the following:
+
+#map img {
+		max-width: none;
+}
+*/
+
+/* force a vertical scrollbar to prevent a jumpy page */
+html {overflow-y: scroll;}
+
+/* we use a lot of ULs that aren't bulleted.
+	you'll have to restore the bullets within content,
+	which is fine because they're probably customized anyway */
+ul {list-style: none;}
+
+blockquote, q {quotes: none;}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {content: ''; content: none;}
+
+a {margin: 0; padding: 0; font-size: 100%; vertical-align: baseline; background: transparent;}
+
+del {text-decoration: line-through;}
+
+abbr[title], dfn[title] {border-bottom: 1px dotted #000; cursor: help;}
+
+/* tables still need cellspacing="0" in the markup */
+table {border-collapse: separate; border-spacing: 0;}
+th {font-weight: bold; vertical-align: bottom;}
+td {font-weight: normal; vertical-align: top;}
+
+hr {display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0;}
+
+input, select {vertical-align: middle;}
+
+pre {
+    white-space: pre; /* CSS2 */
+    white-space: pre-wrap; /* CSS 2.1 */
+    white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
+    word-wrap: break-word; /* IE */
+}
+
+input[type="radio"] {vertical-align: text-bottom;}
+input[type="checkbox"] {vertical-align: bottom;}
+.ie7 input[type="checkbox"] {vertical-align: baseline;}
+.ie6 input {vertical-align: text-bottom;}
+
+select, input, textarea {font: 99% sans-serif;}
+
+table {font-size: inherit; font: 100%;}
+
+small {font-size: 85%;}
+
+strong {font-weight: bold;}
+
+td, td img {vertical-align: top;}
+
+/* Make sure sup and sub don't mess with your line-heights http://gist.github.com/413930 */
+sub, sup {font-size: 75%; line-height: 0; position: relative;}
+sup {top: -0.5em;}
+sub {bottom: -0.25em;}
+
+/* standardize any monospaced elements */
+pre, code, kbd, samp {font-family: monospace, sans-serif;}
+
+/* hand cursor on clickable elements */
+.clickable,
+label,
+input[type=button],
+input[type=submit],
+input[type=file],
+button {cursor: pointer;}
+
+/* Webkit browsers add a 2px margin outside the chrome of form elements */
+button, input, select, textarea {margin: 0;}
+
+/* make buttons play nice in IE */
+button,
+input[type=button] {width: auto; overflow: visible;}
+
+/* scale images in IE7 more attractively */
+.ie7 img {-ms-interpolation-mode: bicubic;}
+
+/* prevent BG image flicker upon hover
+   (commented out as usage is rare, and the filter syntax messes with some pre-processors)
+.ie6 html {filter: expression(document.execCommand("BackgroundImageCache", false, true));}
+*/
+
+/* let's clear some floats */
+.clearfix:after { content: " "; display: block; clear: both; }
+
+
+/*main css*/
 /* You can add global styles to this file, and also import other style files */
+
+
+html {
+    font-size: .625rem;
+    --home-back-color: #252934;
+    --home-text-color: #fff;
+    --theme-color: #E31B6D;
+    --second-theme-color: #04C2C9;
+    --font-family-regular: 'Open Sans';
+    font-family: var(--font-family-regular);
+    --btn-white-color: #fff;
+    --btn-white-border: #fff;
+    --btn-white-hover-back-color: var(--second-theme-color);
+    --btn-white-hover-border-color: var(--second-theme-color);
+    --text-color1:#372541; 
+    --text-color2:#73667A;
+    --text-color3:#9F95A4;
+    --text-color4: #fff;
+    --link-color: #009ADA;
+    --proficiency-back-color: #eee;
+    --skill-back-color: #00A1A7;
+    --skill-text-color: #fff;
+    --footer-back-color: #1B242F;
+    --social-back-color: #252934;
+}
+
+[section] {
+    overflow-x: hidden;
+}
+
+.left-right {
+    animation: left-right 500ms ease forwards;
+}
+.right-left {
+    animation: right-left 500ms ease forwards;   
+}
+
+.delay-half {
+    animation-delay: 500ms;
+}
+
+.animate-width {
+    transform-origin: left;
+    animation: animate-width 500ms 500ms ease forwards; 
+}
+
+.animate-rotation {
+    transform-origin: left;
+    animation: animate-width 500ms 500ms ease forwards; 
+}
+
+@keyframes right-left {
+    from {
+        transform: translateX(2000%);
+    } 
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+@keyframes left-right {
+    from {
+        transform: translate(-2000%);
+    } 
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes animate-width {
+    from {
+        opacity: 1;
+        transform: scale(0);
+    } to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes animate-rotation {
+    from {
+        transform: rotate(-90deg);
+    }
+    to {
+        transform: rotate(0);
+        opacity: 1;
+    }
+}
+
+
+.btn-white {
+    font-size: 1.5rem;
+    border: .1em solid var(--btn-white-border);
+    background-color: transparent;
+    color: var(--btn-white-color);
+    padding: .9em 1em;
+    box-sizing: border-box;
+    transition: all .5s;
+}
+
+.btn-white i {
+    position: relative;
+    top: 3px;
+    display: inline-block;
+    transition: transform .3s;
+}
+
+.btn-white:hover {
+    background-color: var(--btn-white-hover-back-color);
+    border-color: var(--btn-white-hover-border-color); 
+}
+
+.btn-white:hover i {
+    transform: rotateZ(90deg);
+}
+
+
+@media all and (min-width: 700px) {
+    .btn-white {
+        font-size: 2rem;
+        padding: .6em .8em;
+    }
+}
+
+.header-bar {
+    height: .4rem;
+}
+
+.header-bar-1c-7w {
+    width: 7rem;
+    background: var(--text-color1);
+    margin: 1rem 0 5rem;
+}
+
+.header-bar-4c-7w {
+    width: 7rem;
+    background: var(--text-color4);
+    margin: 1rem 0 5rem;
+}
+
+h2 {
+    color: var(--text-color1);
+    font-size: 2.5rem;
+    margin-top: 7rem;
+    font-weight: bold;
+}
+ 
+.to-animate {
+    opacity: 0;
+}
+
+
+ h3 {
+    font-size: 1.8rem;
+    color: var(--text-color2);
+    font-weight: bold;
+ }
+
+@media all and (min-width: 700px) {
+    h2 {
+        font-size: 3rem;
+    } 
+}
+
+a {
+    text-decoration: none;
+}
+
+.link {
+    color: var(--link-color);
+    cursor: pointer;
+}
+
+nav {
+    --nav-active-color: var(--theme-color);
+    --nav-hover-color: var(--theme-color);
+    --nav-text-color: #fff;
+    --nav-back-color: #1B242F;
+    --nav-border-color: #04C2C9;
+    height: 5rem;
+    box-sizing: border-box;
+    background: var(--nav-back-color);
+    border-bottom: .3rem solid var(--nav-border-color); 
+    line-height: 5rem;
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+nav ul {
+    display: flex;
+    max-width: 102.4rem;
+    width: 100%;
+}
+nav li {
+    color: var(--nav-text-color);
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    padding: 0 .8em;
+    cursor: pointer;
+    transition: all 1s;
+}
+nav li a {
+    text-decoration: none;
+    color: inherit;
+}
+nav li:hover {
+    color: var(--nav-hover-color);
+}
+nav li.active {
+    color: var(--nav-active-color);
+}
+
+@media all and (min-width: 450px) {
+    nav li {
+        padding: 0 1.25em;
+    }
+}
+
+
+#home {
+    height: 100vh;
+    padding: 0 2rem;
+    box-sizing: border-box;
+    background: var(--home-back-color);
+    color: var(--home-text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#home .intro{
+    color: var(--home-text-color);
+    font-size: 2rem;
+    margin-bottom: 0.5em; 
+    text-align: center;
+}
+#home .highlight {
+    color: var(--theme-color);
+}
+
+@media all and (min-width: 380px) {
+    #home .intro {
+        font-size: 3rem;
+    }
+}
+@media all and (min-width: 700px) {
+    #home .intro {
+        font-size: 4rem;
+    }
+}
+
+#skills {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    min-height: 100vh;
+    padding-bottom: 7rem;
+}
+
+#skills .specialities {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.speciality {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:  0 2rem 2rem 2rem;
+    width: 50%;
+}
+
+.speciality h3 {
+    padding: 0.9em 0 0.5em;
+}
+ .speciality span {
+     color: var(--text-color3);
+     font-size: 1.4rem;
+     text-align: center;
+     max-width: 22rem;
+ }
+
+@media all and (min-width: 1070px) {
+    .speciality{
+        width: auto;
+    }   
+}
+
+.hex, .hex::before, .hex::after {
+    width: calc(10rem * 0.5773);
+    height: 10rem;
+    background: var(--second-theme-color);
+    position: relative;
+}
+
+.hex::before, .hex::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+}
+
+.hex::before {
+    transform: rotateZ(60deg);
+}
+.hex::after {
+    transform: rotateZ(-60deg);
+}
+
+.hex i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #fff;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    font-size: 45px;
+}
+
+.info-skill-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+}
+
+.info {
+    margin-top: 2rem;
+    padding: 0 4rem;
+}
+
+#skills .info-desc {
+    font-size: 1.6rem;
+    margin-top: 1rem;
+    line-height: 1.5;
+}
+
+.skills-container {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 4rem;
+    font-size: 1.4rem;
+}
+
+.skill-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 3rem;
+    line-height: 3rem;
+    width: 100%;
+    margin: .8rem 0;
+    background: var(--proficiency-back-color);
+}
+
+.skill-name {
+    background: var(--skill-back-color);
+    height: 100%;
+    text-align: left;
+    color: var(--skill-text-color);
+}
+
+.skill-name .name {
+    height: 100%;
+    padding: 0 2rem;
+    display: inline-block; 
+    --background: var(--second-theme-color);
+    font-weight: bold;
+}
+.proficiency {
+    height: 100%;
+    padding: 0 1.5rem;
+}
+@media all and (min-width: 960px) {
+    .info-skill-container {
+        flex-direction: row;
+        align-items: center;
+    }    
+    .info,.skills-container {
+        width: 50%;
+    }
+}
+
+footer {
+    background: var(--footer-back-color);
+    padding: 7rem 4rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+footer h2 {
+    color: #fff;
+}
+
+
+
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-links a {
+    width: 5.5rem;
+    height: 5.5rem;
+    margin: 1.5rem;
+    background: var(--social-back-color);
+    transition: all .2s;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-links i {
+    display: inline-block;
+    font-size: 2.4rem;
+    color: #fff;
+    position: relative;
+    top: 3px;
+}
+.social-links a:hover {
+    background: var(--second-theme-color);
+}
+.social-links a:hover i {
+    animation: slide-bottom .3s .1s ease;
+}
+
+@keyframes slide-bottom {
+    from {
+        transform: translateY(-100%); 
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+
+.copyright {
+    text-align: center;
+    font-size: 1.4rem;
+    color: var(--text-color3);
+    margin-top: 2rem;
+}
+
+.copyright span {
+    color: var(--theme-color);
+}
